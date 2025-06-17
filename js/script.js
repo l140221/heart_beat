@@ -40,7 +40,7 @@ scene.add(group);
 
 // 加载字体（确保fonts文件夹下有helvetiker_regular.typeface.json）
 const loader = new THREE.FontLoader();
-loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
+loader.load('fonts/gentilis_regular.typeface.json', (font) => {
   // 创建文字几何体
   const textGeometry = new THREE.TextGeometry('赵找找', {
     font: font,
