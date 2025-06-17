@@ -42,7 +42,7 @@ scene.add(group);
 const loader = new THREE.FontLoader();
 loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
   // 创建文字几何体
-  const textGeometry = new THREE.TextGeometry('赵找找', {
+  const textGeometry = new THREE.TextGeometry('zzz', {
     font: font,
     size: 0.5,       // 文字大小，可根据爱心尺寸调整（建议先设为0.3-0.4）
     height: 0.02,    // 文字厚度
@@ -57,6 +57,8 @@ loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
   // 设置文字材质（建议与爱心材质颜色一致）
   const textMaterial = new THREE.MeshPhongMaterial({ 
     color: 0xff2a6d,  // 红色，若爱心是其他颜色可修改
+    emissive: 0xff2a6d,    // 新增：自发光颜色（与基础色一致）
+    emissiveIntensity: 1.5, // 新增：发光强度（可调整为1-3之间的值）
     shininess: 100,
     specular: new THREE.Color(0xffffff)
   });
