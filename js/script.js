@@ -42,7 +42,7 @@ scene.add(group);
 const loader = new THREE.FontLoader();
 loader.load('https://cdn.jsdelivr.net/npm/three/examples/fonts/helvetiker_regular.typeface.json', (font) => {
   // 创建文字几何体
-  const textGeometry = new THREE.TextGeometry('zzz', {
+  const textGeometry = new THREE.TextGeometry('lsm', {
     font: font,
     size: 0.1,
     height: 0.02,
@@ -65,7 +65,7 @@ loader.load('https://cdn.jsdelivr.net/npm/three/examples/fonts/helvetiker_regula
   const textMesh = new THREE.Mesh(textGeometry, textMaterial);
   
   // 调整文字位置到爱心前方
-  textMesh.position.set(0, 0, 0.5);  // 增加z轴偏移，确保不被遮挡
+  textMesh.position.set(0, 0, 0);  // 增加z轴偏移，确保不被遮挡
   
   // 确保文字面向相机
   textMesh.lookAt(camera.position);
