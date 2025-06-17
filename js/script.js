@@ -59,8 +59,6 @@ loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
     color: 0xff2a6d,  // 红色，若爱心是其他颜色可修改
     emissive: 0xffff99,    // 新增：自发光颜色（与基础色一致）
     emissiveIntensity: 2.5, // 新增：发光强度（可调整为1-3之间的值）
-    shininess: 100,
-    specular: new THREE.Color(0xffffff)
   });
   
   // 创建文字网格
