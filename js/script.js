@@ -38,14 +38,14 @@ scene.add(group);
 
 // 假设此处已有爱心模型的创建逻辑（如heartMesh）
 
-// 加载字体（确保fonts文件夹下有helvetiker_regular.typeface.json）
+// 修改字体加载路径为CDN路径
 const loader = new THREE.FontLoader();
-loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
+loader.load('https://cdn.jsdelivr.net/npm/three/examples/fonts/helvetiker_regular.typeface.json', (font) => {
   // 创建文字几何体
-  const textGeometry = new THREE.TextGeometry('zzz', {
+  const textGeometry = new THREE.TextGeometry('Love You', {
     font: font,
-    size: 0.5,       // 文字大小，可根据爱心尺寸调整（建议先设为0.3-0.4）
-    height: 0.02,    // 文字厚度
+    size: 0.5,
+    height: 0.02,
     curveSegments: 12,
     bevelEnabled: true,
     bevelThickness: 0.03,
@@ -54,25 +54,24 @@ loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
     bevelSegments: 5
   });
   
-  // 设置文字材质（建议与爱心材质颜色一致）
+  // 设置文字材质，使用发光效果
   const textMaterial = new THREE.MeshBasicMaterial({ 
-    color:0xffff99, 
-    emissive: 0xffff99,    // 新增：自发光颜色（与基础色一致）
-    emissiveIntensity: 2.5, // 新增：发光强度（可调整为1-3之间的值）
+    color: 0xffff99, // 黄色
+    transparent: true,
+    opacity: 0.9
   });
   
   // 创建文字网格
   const textMesh = new THREE.Mesh(textGeometry, textMaterial);
   
-  // 调整文字位置到爱心中心（需根据爱心实际位置修改）
-  // 假设爱心中心在(0, 0, 0)，若爱心有偏移，需对应调整坐标
-  textMesh.position.set(0, 0, 0.3);  // 示例：z轴偏移0.1避免与爱心模型重叠
+  // 调整文字位置到爱心前方
+  textMesh.position.set(0, 0, 0.5);  // 增加z轴偏移，确保不被遮挡
   
-  // 旋转文字使其正对视角（若爱心是3D旋转的，可能需要动态调整）
-  textMesh.rotation.y = 0;
+  // 确保文字面向相机
+  textMesh.lookAt(camera.position);
   
   // 添加到场景
-  scene.add(textMesh);
+  group.add(textMesh); // 添加到group而不是scene，确保与爱心一起变换
 });
 
 let heart = null;
