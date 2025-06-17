@@ -55,8 +55,7 @@ loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
   });
   
   // 设置文字材质（建议与爱心材质颜色一致）
-  const textMaterial = new THREE.MeshPhongMaterial({ 
-    color: 0xff2a6d,  // 红色，若爱心是其他颜色可修改
+  const textMaterial = new THREE.MeshBasicMaterial({ 
     emissive: 0xffff99,    // 新增：自发光颜色（与基础色一致）
     emissiveIntensity: 2.5, // 新增：发光强度（可调整为1-3之间的值）
   });
