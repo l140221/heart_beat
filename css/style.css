@@ -2,4 +2,6 @@ body {
   background: #000;
   overflow: hidden;
   margin: 0;
+  <script src="js/FontLoader.js"></script>
+  <script src="js/TextGeometry.js"></script>
 }
