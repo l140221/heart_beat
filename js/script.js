@@ -24,7 +24,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // 表示对象局部位置的 Vector3。默认值为(0, 0, 0)。
-camera.position.z = 1.8;
+camera.position.z = 3;
 
 // 轨迹球控制器
 const controls = new THREE.TrackballControls(camera, renderer.domElement);
@@ -40,7 +40,7 @@ scene.add(group);
 
 // 加载字体（确保fonts文件夹下有helvetiker_regular.typeface.json）
 const loader = new THREE.FontLoader();
-loader.load('fonts/gentilis_regular.typeface.json', (font) => {
+loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
   // 创建文字几何体
   const textGeometry = new THREE.TextGeometry('赵找找', {
     font: font,
@@ -66,7 +66,7 @@ loader.load('fonts/gentilis_regular.typeface.json', (font) => {
   
   // 调整文字位置到爱心中心（需根据爱心实际位置修改）
   // 假设爱心中心在(0, 0, 0)，若爱心有偏移，需对应调整坐标
-  textMesh.position.set(0, 0, 0.1);  // 示例：z轴偏移0.1避免与爱心模型重叠
+  textMesh.position.set(0, 0, 0.3);  // 示例：z轴偏移0.1避免与爱心模型重叠
   
   // 旋转文字使其正对视角（若爱心是3D旋转的，可能需要动态调整）
   textMesh.rotation.y = Math.PI / 2;
