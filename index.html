@@ -15,5 +15,39 @@
     <script src="js/OBJLoader.js"></script>
     <script src="js/gsap.min.js"></script>
     <script src="js/script.js"></script>
+    // 加载字体（假设已准备好字体文件，如helvetiker_regular.typeface.json）
+const loader = new THREE.FontLoader();
+loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
+  // 创建文字几何体
+  const textGeometry = new THREE.TextGeometry('赵找找', {
+    font: font,
+    size: 0.5,  // 文字大小，可根据爱心尺寸调整
+    height: 0.02,  // 文字厚度
+    curveSegments: 12,
+    bevelEnabled: true,
+    bevelThickness: 0.03,
+    bevelSize: 0.02,
+    bevelOffset: 0,
+    bevelSegments: 5
+  });
+  
+  // 设置文字材质（与爱心材质匹配或自定义）
+  const textMaterial = new THREE.MeshPhongMaterial({ 
+    color: 0xff2a6d,  // 红色，可修改为爱心同色
+    shininess: 100,
+    specular: new THREE.Color(0xffffff)
+  });
+  
+  // 创建文字网格
+  const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+  
+  // 将文字放置在爱心中心（需根据爱心实际位置调整坐标）
+  textMesh.position.set(0, 0, 0);  // 假设爱心中心在原点
+  
+  // 旋转文字使其正对视角（如爱心是立体的，可能需要调整角度）
+  textMesh.rotation.y = Math.PI / 2;  // 示例旋转角度，可按需修改
+  
+  scene.add(textMesh);
+});
   </body>
 </html>
