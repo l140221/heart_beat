@@ -36,6 +36,45 @@ controls.minDistance = 0.7;
 const group = new THREE.Group();
 scene.add(group);
 
+// 假设此处已有爱心模型的创建逻辑（如heartMesh）
+
+// 加载字体（确保fonts文件夹下有helvetiker_regular.typeface.json）
+const loader = new THREE.FontLoader();
+loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
+  // 创建文字几何体
+  const textGeometry = new THREE.TextGeometry('赵找找', {
+    font: font,
+    size: 0.5,       // 文字大小，可根据爱心尺寸调整（建议先设为0.3-0.4）
+    height: 0.02,    // 文字厚度
+    curveSegments: 12,
+    bevelEnabled: true,
+    bevelThickness: 0.03,
+    bevelSize: 0.02,
+    bevelOffset: 0,
+    bevelSegments: 5
+  });
+  
+  // 设置文字材质（建议与爱心材质颜色一致）
+  const textMaterial = new THREE.MeshPhongMaterial({ 
+    color: 0xff2a6d,  // 红色，若爱心是其他颜色可修改
+    shininess: 100,
+    specular: new THREE.Color(0xffffff)
+  });
+  
+  // 创建文字网格
+  const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+  
+  // 调整文字位置到爱心中心（需根据爱心实际位置修改）
+  // 假设爱心中心在(0, 0, 0)，若爱心有偏移，需对应调整坐标
+  textMesh.position.set(0, 0, 0.1);  // 示例：z轴偏移0.1避免与爱心模型重叠
+  
+  // 旋转文字使其正对视角（若爱心是3D旋转的，可能需要动态调整）
+  textMesh.rotation.y = Math.PI / 2;
+  
+  // 添加到场景
+  scene.add(textMesh);
+});
+
 let heart = null;
 let sampler = null;
 let originHeart = null;
