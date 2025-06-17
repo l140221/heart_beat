@@ -24,7 +24,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // 表示对象局部位置的 Vector3。默认值为(0, 0, 0)。
-camera.position.z = 3;
+camera.position.z = 5;
 
 // 轨迹球控制器
 const controls = new THREE.TrackballControls(camera, renderer.domElement);
@@ -56,6 +56,7 @@ loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
   
   // 设置文字材质（建议与爱心材质颜色一致）
   const textMaterial = new THREE.MeshBasicMaterial({ 
+    color:0xffff99, 
     emissive: 0xffff99,    // 新增：自发光颜色（与基础色一致）
     emissiveIntensity: 2.5, // 新增：发光强度（可调整为1-3之间的值）
   });
@@ -68,7 +69,7 @@ loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
   textMesh.position.set(0, 0, 0.3);  // 示例：z轴偏移0.1避免与爱心模型重叠
   
   // 旋转文字使其正对视角（若爱心是3D旋转的，可能需要动态调整）
-  textMesh.rotation.y = Math.PI / 2;
+  textMesh.rotation.y = 0;
   
   // 添加到场景
   scene.add(textMesh);
