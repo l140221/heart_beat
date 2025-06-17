@@ -44,7 +44,7 @@ loader.load('fonts/helvetiker_regular.typeface.json', (font) => {
   // 创建文字几何体
   const textGeometry = new THREE.TextGeometry('zzz', {
     font: font,
-    size: 0.3,       // 文字大小，可根据爱心尺寸调整（建议先设为0.3-0.4）
+    size: 0.5,       // 文字大小，可根据爱心尺寸调整（建议先设为0.3-0.4）
     height: 0.02,    // 文字厚度
     curveSegments: 12,
     bevelEnabled: true,
