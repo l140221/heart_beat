@@ -42,7 +42,7 @@ scene.add(group);
 const loader = new THREE.FontLoader();
 loader.load('https://cdn.jsdelivr.net/npm/three/examples/fonts/helvetiker_regular.typeface.json', (font) => {
   // 创建文字几何体
-  const textGeometry = new THREE.TextGeometry('赵找找', {
+  const textGeometry = new THREE.TextGeometry('zzz', {
     font: font,
     size: 0.1,
     height: 0.02,
