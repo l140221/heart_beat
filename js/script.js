@@ -40,7 +40,7 @@ scene.add(group);
 const loader = new THREE.FontLoader();
 loader.load('https://cdn.jsdelivr.net/gh/learning-threejs/learning-threejs.github.io/fonts/helvetiker_regular.typeface.json', (font) => {
   // 创建文字几何体
-  const textGeometry = new THREE.TextGeometry('大', {
+  const textGeometry = new THREE.TextGeometry('李舒敏', {
     font: font,
     size: 0.2,
     height: 0.01,
