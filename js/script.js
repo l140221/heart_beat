@@ -38,9 +38,9 @@ scene.add(group);
 
 // 修改字体加载路径为CDN路径
 const loader = new THREE.FontLoader();
-loader.load('https://cdn.jsdelivr.net/npm/three/examples/fonts/helvetiker_regular.typeface.json', (font) => {
+loader.load('https://cdn.jsdelivr.net/gh/learning-threejs/learning-threejs.github.io/fonts/helvetiker_regular.typeface.json', (font) => {
   // 创建文字几何体
-  const textGeometry = new THREE.TextGeometry('lsm', {
+  const textGeometry = new THREE.TextGeometry('大', {
     font: font,
     size: 0.2,
     height: 0.01,
