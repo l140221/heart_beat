@@ -36,17 +36,15 @@ controls.minDistance = 0.7;
 const group = new THREE.Group();
 scene.add(group);
 
-// 假设此处已有爱心模型的创建逻辑（如heartMesh）
-
 // 修改字体加载路径为CDN路径
 const loader = new THREE.FontLoader();
 loader.load('https://cdn.jsdelivr.net/npm/three/examples/fonts/helvetiker_regular.typeface.json', (font) => {
   // 创建文字几何体
-  const textGeometry = new THREE.TextGeometry('lsm', {
+  const textGeometry = new THREE.TextGeometry('大', {
     font: font,
-    size: 0.1,
-    height: 0.02,
-    curveSegments: 12,
+    size: 0.2,
+    height: 0.01,
+    curveSegments: 24,
     bevelEnabled: true,
     bevelThickness: 0.03,
     bevelSize: 0.02,
@@ -56,7 +54,7 @@ loader.load('https://cdn.jsdelivr.net/npm/three/examples/fonts/helvetiker_regula
   
   // 设置文字材质，使用发光效果
   const textMaterial = new THREE.MeshBasicMaterial({ 
-    color: 0xffff99, // 黄色
+    color: 0xff99cc, // 黄色
     transparent: true,
     opacity: 0.9
   });
