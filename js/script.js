@@ -38,7 +38,7 @@ scene.add(group);
 
 // 修改字体加载路径为CDN路径
 const loader = new THREE.FontLoader();
-loader.load('https://github.com/l140221/heart_beat/blob/main/fonts/gentilis_regular.typeface.json', (font) => {
+loader.load('/fonts/gentilis_regular.typeface.json', (font) => {
   // 创建文字几何体
   const textGeometry = new THREE.TextGeometry('LSM', {
     font: font,
