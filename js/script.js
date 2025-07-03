@@ -41,7 +41,7 @@ const loader = new THREE.FontLoader();
 loader.load('fonts/JMH_Regular.json', (font) => {
     try {
         // 创建文字几何体
-        const textGeometry = new THREE.TextGeometry('赵找找', {
+        const textGeometry = new THREE.TextGeometry('赵', {
             font: font,
             size: 0.3,
             height: 0.01,
@@ -71,8 +71,7 @@ loader.load('fonts/JMH_Regular.json', (font) => {
         textMesh.rotation.set(0, 0, 0);
 
         // 确保文字面向相机
-        //textMesh.lookAt(camera.position);
-        textMesh.rotation.y = Math.PI;
+        textMesh.lookAt(camera.position);
 
         // 添加到场景
         group.add(textMesh); // 添加到group而不是scene，确保与爱心一起变换
