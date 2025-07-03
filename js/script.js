@@ -41,7 +41,7 @@ const loader = new THREE.FontLoader();
 loader.load('fonts/gentilis_regular.typeface.json', (font) => {
     try {
         // 创建文字几何体
-        const textGeometry = new THREE.TextGeometry('LSM', {
+        const textGeometry = new THREE.TextGeometry('L舒M', {
             font: font,
             size: 0.2,
             height: 0.01,
@@ -64,7 +64,7 @@ loader.load('fonts/gentilis_regular.typeface.json', (font) => {
         const textMesh = new THREE.Mesh(textGeometry, textMaterial);
 
         // 调整文字位置到爱心前方
-        textMesh.position.set(0, 0, 0);  // 增加z轴偏移，确保不被遮挡
+        textMesh.position.set(-0.3, 0, 0);  // 增加z轴偏移，确保不被遮挡
 
         // 确保文字面向相机
         textMesh.lookAt(camera.position);
