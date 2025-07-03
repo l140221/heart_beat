@@ -41,7 +41,7 @@ const loader = new THREE.FontLoader();
 loader.load('fonts/JMH_Regular.json', (font) => {
     try {
         // 创建文字几何体
-        const textGeometry = new THREE.TextGeometry('赵', {
+        const textGeometry = new THREE.TextGeometry('赵找找', {
             font: font,
             size: 0.3,
             height: 0.01,
