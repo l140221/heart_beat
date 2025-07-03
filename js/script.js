@@ -71,7 +71,8 @@ loader.load('fonts/JMH_Regular.json', (font) => {
         textMesh.rotation.set(0, 0, 0);
 
         // 确保文字面向相机
-        textMesh.lookAt(camera.position);
+        //textMesh.lookAt(camera.position);
+        textMesh.rotation.y = Math.PI;
 
         // 添加到场景
         group.add(textMesh); // 添加到group而不是scene，确保与爱心一起变换
