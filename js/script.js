@@ -55,7 +55,7 @@ loader.load('fonts/JMH_Regular.json', (font) => {
 
         // 设置文字材质，使用发光效果
         const textMaterial = new THREE.MeshBasicMaterial({
-            color: 0xff99cc, 
+            color: 0xffff99, 
             transparent: true,
             opacity: 0.9,
             shininess: 30 
