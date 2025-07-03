@@ -39,37 +39,43 @@ scene.add(group);
 
 const loader = new THREE.FontLoader();
 loader.load('fonts/gentilis_regular.typeface.json', (font) => {
-  // 创建文字几何体
-  const textGeometry = new THREE.TextGeometry('LSM', {
-    font: font,
-    size: 0.2,
-    height: 0.01,
-    curveSegments: 24,
-    bevelEnabled: true,
-    bevelThickness: 0.03,
-    bevelSize: 0.02,
-    bevelOffset: 0,
-    bevelSegments: 5
-  });
-  
-  // 设置文字材质，使用发光效果
-  const textMaterial = new THREE.MeshBasicMaterial({ 
-    color: 0xff99cc, // 黄色
-    transparent: true,
-    opacity: 0.9
-  });
-  
-  // 创建文字网格
-  const textMesh = new THREE.Mesh(textGeometry, textMaterial);
-  
-  // 调整文字位置到爱心前方
-  textMesh.position.set(-0.3, 0, 0);  // 增加z轴偏移，确保不被遮挡
-  
-  // 确保文字面向相机
-  textMesh.lookAt(camera.position);
-  
-  // 添加到场景
-  group.add(textMesh); // 添加到group而不是scene，确保与爱心一起变换
+    try {
+        // 创建文字几何体
+        const textGeometry = new THREE.TextGeometry('LSM', {
+            font: font,
+            size: 0.2,
+            height: 0.01,
+            curveSegments: 24,
+            bevelEnabled: true,
+            bevelThickness: 0.03,
+            bevelSize: 0.02,
+            bevelOffset: 0,
+            bevelSegments: 5
+        });
+
+        // 设置文字材质，使用发光效果
+        const textMaterial = new THREE.MeshBasicMaterial({
+            color: 0xff99cc, // 黄色
+            transparent: true,
+            opacity: 0.9
+        });
+
+        // 创建文字网格
+        const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+
+        // 调整文字位置到爱心前方
+        textMesh.position.set(-0.3, 0, 0);  // 增加z轴偏移，确保不被遮挡
+
+        // 确保文字面向相机
+        textMesh.lookAt(camera.position);
+
+        // 添加到场景
+        group.add(textMesh); // 添加到group而不是scene，确保与爱心一起变换
+    } catch (error) {
+        console.error('Error creating text mesh:', error);
+    }
+}, undefined, (error) => {
+    console.error('Error loading font:', error);
 });
 
 let heart = null;
