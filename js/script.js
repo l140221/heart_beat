@@ -65,7 +65,7 @@ loader.load('fonts/JMH_Regular.json', (font) => {
         const textMesh = new THREE.Mesh(textGeometry, textMaterial);
 
         // 调整文字位置到爱心前方
-        textMesh.position.set(-0.5, 0, 0.1);  // 增加z轴偏移，确保不被遮挡
+        textMesh.position.set(-0.55, 0, 0.1);  // 增加z轴偏移，确保不被遮挡
 
         // 确保文字面向相机
         textMesh.lookAt(camera.position);
