@@ -55,7 +55,7 @@ loader.load('fonts/JMH_Regular.json', (font) => {
 
         // 设置文字材质，使用发光效果
         const textMaterial = new THREE.MeshBasicMaterial({
-            color: 0xff99cc, // 黄色
+            color: 0xff99cc, 
             transparent: true,
             opacity: 0.9
         });
@@ -64,7 +64,7 @@ loader.load('fonts/JMH_Regular.json', (font) => {
         const textMesh = new THREE.Mesh(textGeometry, textMaterial);
 
         // 调整文字位置到爱心前方
-        textMesh.position.set(-0.1, 0, 0);  // 增加z轴偏移，确保不被遮挡
+        textMesh.position.set(-1, 0, 0);  // 增加z轴偏移，确保不被遮挡
 
         // 确保文字面向相机
         textMesh.lookAt(camera.position);
