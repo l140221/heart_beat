@@ -57,8 +57,7 @@ loader.load('fonts/JMH_Regular.json', (font) => {
         const textMaterial = new THREE.MeshBasicMaterial({
             color: 0xffff99, 
             transparent: true,
-            opacity: 0.9,
-            shininess: 30 
+            opacity: 0.9
         });
 
         // 创建文字网格
