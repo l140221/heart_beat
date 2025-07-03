@@ -41,7 +41,7 @@ const loader = new THREE.FontLoader();
 loader.load('fonts/JMH_Regular.json', (font) => {
     try {
         // 创建文字几何体
-        const textGeometry = new THREE.TextGeometry('L舒M', {
+        const textGeometry = new THREE.TextGeometry('李舒敏', {
             font: font,
             size: 0.2,
             height: 0.01,
