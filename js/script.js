@@ -38,7 +38,7 @@ scene.add(group);
 
 
 const loader = new THREE.FontLoader();
-loader.load('/fonts/gentilis_regular.typeface.json', (font) => {
+loader.load('fonts/gentilis_regular.typeface.json', (font) => {
     try {
         // 创建文字几何体
         const textGeometry = new THREE.TextGeometry('LSM', {
