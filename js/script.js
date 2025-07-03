@@ -43,28 +43,29 @@ loader.load('fonts/JMH_Regular.json', (font) => {
         // 创建文字几何体
         const textGeometry = new THREE.TextGeometry('赵找找', {
             font: font,
-            size: 0.2,
+            size: 0.3,
             height: 0.01,
-            curveSegments: 24,
+            curveSegments: 32,
             bevelEnabled: true,
-            bevelThickness: 0.03,
-            bevelSize: 0.02,
+            bevelThickness: 0.01,
+            bevelSize: 0.005,
             bevelOffset: 0,
-            bevelSegments: 5
+            bevelSegments: 8
         });
 
         // 设置文字材质，使用发光效果
         const textMaterial = new THREE.MeshBasicMaterial({
             color: 0xff99cc, 
             transparent: true,
-            opacity: 0.9
+            opacity: 0.9,
+            shininess: 30 
         });
 
         // 创建文字网格
         const textMesh = new THREE.Mesh(textGeometry, textMaterial);
 
         // 调整文字位置到爱心前方
-        textMesh.position.set(-1, 0, 0);  // 增加z轴偏移，确保不被遮挡
+        textMesh.position.set(-0.5, 0, 0.1);  // 增加z轴偏移，确保不被遮挡
 
         // 确保文字面向相机
         textMesh.lookAt(camera.position);
